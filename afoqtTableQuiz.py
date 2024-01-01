@@ -191,10 +191,20 @@ class Quiz:
 
     def submit_quiz(self):
         self.timer_running = False
+
+        # Check and record the answer of the current question before submitting if it's not the first question
+        if self.current_question_number > 1 and self.radio_var.get() != 0:
+            self.check_answer()
+
         self.calculate_results()
+
+        # Clear the quiz window
         for widget in self.root.winfo_children():
             widget.destroy()
+
+        # Show the main menu
         self.main_window.show_main_menu()
+
 
     def end_quiz(self):
         self.timer_running = False
