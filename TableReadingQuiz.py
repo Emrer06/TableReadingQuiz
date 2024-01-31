@@ -284,16 +284,19 @@ class MainWindow:
         button_width = 200
         button_height = 50
 
+        purple_color = "#a74ac7"
+        hover_purple_color = "#9639b6"
+        
         self.label = ctk.CTkLabel(self.central_frame, text='Table Reading Quiz', font=label_font)
         self.label.grid(row=0, column=0, sticky='nsew', pady=10)
 
-        self.full_test = ctk.CTkButton(self.central_frame, text="Full Test (7 Minutes)", command=self.start_full_test, corner_radius=25, font=button_font, width=button_width, height=button_height)
+        self.full_test = ctk.CTkButton(self.central_frame, text="Full Test (7 Minutes)", command=self.start_full_test, corner_radius=25, font=button_font, fg_color=purple_color, hover_color=hover_purple_color, width=button_width, height=button_height)
         self.full_test.grid(row=1, column=0, sticky='ns', pady=10)
 
-        self.half_test = ctk.CTkButton(self.central_frame, text="Half Test (3.5 Minutes)", command=self.start_half_test, corner_radius=25, font=button_font, width=button_width, height=button_height)
+        self.half_test = ctk.CTkButton(self.central_frame, text="Half Test (3.5 Minutes)", command=self.start_half_test, corner_radius=25, font=button_font, fg_color=purple_color, hover_color=hover_purple_color, width=button_width, height=button_height)
         self.half_test.grid(row=2, column=0, sticky='ns', pady=10)
 
-        self.quick_run = ctk.CTkButton(self.central_frame, text="Quick Run (1 Minute)", command=self.start_quick_run, corner_radius=25, font=button_font, width=button_width, height=button_height)
+        self.quick_run = ctk.CTkButton(self.central_frame, text="Quick Run (1 Minute)", command=self.start_quick_run, corner_radius=25, font=button_font, fg_color=purple_color, hover_color=hover_purple_color, width=button_width, height=button_height)
         self.quick_run.grid(row=3, column=0, sticky='ns', pady=10)
 
     def clear_widgets(self):
